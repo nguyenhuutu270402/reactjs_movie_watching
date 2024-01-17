@@ -9,6 +9,8 @@ type Props = {
 function ItemPhim({ className }: Props) {
     return (
         <MainButton onClick={() => { }} className={`w-[186px] h-[250px] rounded-[10px] flex relative ${className}`}>
+            {/* <div >sssssss</div> */}
+
             <img className='w-[186px] h-[250px] rounded-[10px] object-cover' src={"https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg"} alt="image" />
             <div className='max-w-[100px] bg-[#fed700] flex absolute text-[12px] px-[6px] py-[3px] rounded-br-[10px] rounded-tl-[10px]'>Bản mở rộng</div>
             <div className='px-[8px] py-[6px] flex flex-col absolute rounded-br-[10px] rounded-bl-[10px] bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0.6)]'>

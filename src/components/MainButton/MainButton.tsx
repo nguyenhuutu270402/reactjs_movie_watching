@@ -8,7 +8,7 @@ interface MainButtonProps {
 
 function MainButton({ onClick, className, children }: MainButtonProps) {
     return (
-        <button onClick={onClick} className={`transition-opacity hover:opacity-50 ${className}`}>
+        <button onClick={onClick} className={`transition-opacity hover:opacity-50 outline-none ${className}`}>
             {children}
         </button>
     )

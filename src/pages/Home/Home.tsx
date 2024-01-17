@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import logo from '../../assets/logo_movie.png';
 import { ArrowBottom, SearchICon } from 'src/icons';
 import MainButton from 'src/components/MainButton';
@@ -8,8 +8,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CustomArrowSlider, { ArrowType } from 'src/components/CustomArrowSlider/CustomArrowSlider';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "src/components/ui/popover"
+import ItemFilter from 'src/components/ItemFilter';
+import ItemDropFilter from 'src/components/ItemDropFilter';
 
 export default function Home() {
   const [showBoxFilter, setShowBoxFilter] = useState(false);
@@ -91,30 +96,50 @@ export default function Home() {
 
       {
         showBoxFilter === true && <div className='w-[1170px] flex flex-row items-center py-[16px] px-[8px] '>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Sắp xếp</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Định dạng</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Tình trạng</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Quốc gia</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Năm</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
-          <MainButton className='flex flex-row justify-between items-center bg-[#171d23] border-[1px] border-solid border-[#303032] rounded-[50px] px-[16px] w-[14%] h-[40px] mx-[4px]' onClick={() => { }}>
-            <span className='text-white text-[13px] mr-[6px]'>Thể loại</span>
-            <ArrowBottom width={16} height={16} color='white' />
-          </MainButton>
+          <ItemFilter value='Sắp xếp' >
+            <ItemDropFilter value='Sắp xếp' onClick={() => { }} />
+            <ItemDropFilter value='Mới nhất' onClick={() => { }} />
+            <ItemDropFilter value='Xem nhiều' onClick={() => { }} />
+            <ItemDropFilter value='Mới câp nhật' onClick={() => { }} />
+          </ItemFilter>
+
+          <ItemFilter value='Định dạng' >
+            <ItemDropFilter value='Định dạng' onClick={() => { }} />
+            <ItemDropFilter value='Phim lẻ' onClick={() => { }} />
+            <ItemDropFilter value='Phim bộ' onClick={() => { }} />
+          </ItemFilter>
+
+          <ItemFilter value='Tình trạng' >
+            <ItemDropFilter value='Tình trạng' onClick={() => { }} />
+            <ItemDropFilter value='Trailer' onClick={() => { }} />
+            <ItemDropFilter value='Đang phát' onClick={() => { }} />
+            <ItemDropFilter value='Hoàn thành' onClick={() => { }} />
+          </ItemFilter>
+
+          <ItemFilter value='Quốc gia' >
+            <ItemDropFilter value='Quốc gia' onClick={() => { }} />
+            <ItemDropFilter value='Mỹ' onClick={() => { }} />
+            <ItemDropFilter value='Hàn Quốc' onClick={() => { }} />
+            <ItemDropFilter value='Nhật Bản' onClick={() => { }} />
+          </ItemFilter>
+
+          <ItemFilter value='Năm' >
+            <ItemDropFilter value='Năm' onClick={() => { }} />
+            <ItemDropFilter value='2020' onClick={() => { }} />
+            <ItemDropFilter value='2021' onClick={() => { }} />
+            <ItemDropFilter value='2022' onClick={() => { }} />
+            <ItemDropFilter value='2023' onClick={() => { }} />
+            <ItemDropFilter value='2024' onClick={() => { }} />
+            <ItemDropFilter value='2025' onClick={() => { }} />
+            <ItemDropFilter value='2026' onClick={() => { }} />
+          </ItemFilter>
+          
+          <ItemFilter value='Thể loại' >
+            <ItemDropFilter value='Thể loại' onClick={() => { }} />
+            <ItemDropFilter value='Hành động' onClick={() => { }} />
+            <ItemDropFilter value='Tình cảm' onClick={() => { }} />
+            <ItemDropFilter value='Phiêu lưu' onClick={() => { }} />
+          </ItemFilter>
           <MainButton className='bg-[#bc5500] flex-auto border-[1px] border-solid border-[#f17009] rounded-[10px] px-[16px] h-[40px] mx-[4px]' onClick={() => { }}>
             <span className='text-white text-[13px] mr-[6px]'>Lọc phim</span>
           </MainButton>
@@ -122,7 +147,7 @@ export default function Home() {
       }
 
       {/* body */}
-      <div className='w-[300px] sm:w-96 md:w-[1000px] flex flex-col items-start mt-[20px] sm:'>
+      <div className='w-[1170px] flex flex-col items-start mt-[20px]'>
         <span className='text-white text-[20px] ml-[16px]'>HÔM NAY XEM PHIM GÌ?</span>
         <div className='bg-[#202025] h-[4px] w-[100%]' />
       </div>
@@ -130,15 +155,13 @@ export default function Home() {
       <div className='relative mt-[16px]'>
         <Slider ref={(c) => (slider = c)} className='w-[1170px]' {...settings}>
           {[...Array(15)].map((_, index) => (
-            <ItemPhim className='mx-[4px]' />
+            <ItemPhim className='mx-[4px]' key={index} />
           ))}
         </Slider>
         <CustomArrowSlider arrowType={ArrowType.PREVIOUS} onClick={() => { slider && slider.slickPrev() }} />
         <CustomArrowSlider arrowType={ArrowType.NETX} onClick={() => { slider && slider.slickNext() }} />
       </div>
-      <Popup trigger={<button> Trigger</button>} position="right center">
-        <div>Popup content here !!</div>
-      </Popup>
+
     </main>
   )
 }

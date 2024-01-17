@@ -1,7 +1,6 @@
-import React, { MouseEvent } from 'react'
+import { MouseEvent } from 'react'
 import MainButton from '../MainButton'
-import { ArrowBottom, ArrowRightIcon } from 'src/icons'
-import FarvoriteIcon from 'src/icons/FarvoriteIcon'
+import { ArrowRightIcon } from 'src/icons'
 import ArrowLeftIcon from 'src/icons/ArrowLeftIcon'
 
 export enum ArrowType {

@@ -20,7 +20,7 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background-color: #246cf9;
+    background-color: #616161;
     border-radius: 5px;
   }
 
@@ -30,12 +30,12 @@
 }
 
 body ::-webkit-scrollbar {
-  width: 7px;
+  width: 4px;
   height: 7px;
 }
 
 body ::-webkit-scrollbar-thumb {
-  background-color: #246cf9;
+  background-color: #616161;
   border-radius: 5px;
 }
 
