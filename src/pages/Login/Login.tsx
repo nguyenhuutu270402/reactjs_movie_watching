@@ -45,7 +45,7 @@ export default function Login() {
           setErrMess('')
           // setProfile(data.data.data)
           // setProfileToLS(data.data.data)
-          // navigate(path.home)
+          navigate(path.home)
           setIsAuthenticated(true)
         } else {
           setErrMess('The username or password is incorrect')

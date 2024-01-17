@@ -7,15 +7,11 @@ import path from './utils/path'
 
 const LazyLogin = React.lazy(() => import('./pages/Login'))
 const LazyClientLayout = React.lazy(() => import('./layout/ClientLayout'))
-const LazyDashBoardClient = React.lazy(() => import('./pages/DashBoardClient'))
-const LazyDashBoard = React.lazy(() => import('./pages/DashBoardRegister'))
-const LazyDetailRegister = React.lazy(() => import('./pages/DashBoardRegister/DetailRegister'))
-const LazyLog = React.lazy(() => import('./pages/Log'))
-const LazySetting = React.lazy(() => import('./pages/Setting'))
-const LazyServer = React.lazy(() => import('./pages/Server'))
-const LazyStatistic = React.lazy(() => import('./pages/Statistic'))
+const LazyHome = React.lazy(() => import('./pages/Home'))
+
 function ProtectedRoute() {
   const { isAuthenticated } = useAppStore()
+  console.log(isAuthenticated)
   return isAuthenticated ? (
     <React.Suspense fallback={<Loading />}>
       <LazyClientLayout>
@@ -43,37 +39,9 @@ export default function useRouteElement() {
       element: <ProtectedRoute />,
       children: [
         {
-          path: '*',
-          element: <Navigate to={path.statistic} />
+          path: path.home,
+          element: <LazyHome />
         },
-        {
-          path: path.statistic,
-          element: <LazyStatistic />
-        },
-        {
-          path: path.registerUser,
-          element: <LazyDashBoard />
-        },
-        {
-          path: `${path.registerUser_edit}/:id`,
-          element: <LazyDetailRegister />
-        },
-        {
-          path: path.client,
-          element: <LazyDashBoardClient />
-        },
-        {
-          path: path.log,
-          element: <LazyLog />
-        },
-        {
-          path: path.setting,
-          element: <LazySetting />
-        },
-        {
-          path: path.server,
-          element: <LazyServer />
-        }
       ]
     }
   ])

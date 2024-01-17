@@ -1,4 +1,4 @@
-import Sidebar from 'src/components/Sidebar'
+// import Sidebar from 'src/components/Sidebar'
 
 interface Props {
   children: React.ReactNode
@@ -6,8 +6,8 @@ interface Props {
 
 export default function ClientLayout({ children }: Props) {
   return (
-    <div className='flex h-screen overflow-hidden'>
-      <Sidebar />
+    <div className='flex h-screen overflow-hidden justify-center'>
+      {/* <Sidebar /> */}
       {children}
     </div>
   )

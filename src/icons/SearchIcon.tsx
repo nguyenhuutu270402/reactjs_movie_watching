@@ -13,14 +13,14 @@ const SearchIcon = (props: SVGProps<SVGSVGElement>) => (
       cx='8.82491'
       cy='9.32491'
       r='6.74142'
-      stroke='#3C4254'
+      stroke={props.color}
       strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
     <path
       d='M13.5137 14.3638L16.1567 16.9999'
-      stroke='#3C4254'
+      stroke={props.color}
       strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'

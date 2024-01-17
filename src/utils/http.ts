@@ -30,10 +30,16 @@ class Http {
     )
     this.instance.interceptors.response.use(
       (response) => {
-        if (response.data.code === '200') {
+        // if (response.data.code === '200') {
+        //   if (response.config.url === URL_LOGIN) {
+        //     const token = (response.data as authResponse).data.token
+        //     this.accessToken = `Bearer ${token.access_token.token}`
+        //     setAccessTokenToLS(this.accessToken)
+        //   }
+        // }
+        if (response.data.result === true) {
           if (response.config.url === URL_LOGIN) {
-            const token = (response.data as authResponse).data.token
-            this.accessToken = `Bearer ${token.access_token.token}`
+            this.accessToken = `Bearer `
             setAccessTokenToLS(this.accessToken)
           }
         }
