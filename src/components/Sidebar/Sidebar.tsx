@@ -36,7 +36,7 @@ export default function Sidebar() {
           <span className='bg-[#141518] text-white text-[13px] ml-[10px] px-[8px] py-[3px] rounded-[50px]'>0</span>
         </MainButton>
       </div>
-      <div className='w-screen bg-[#202025] flex justify-center py-[6px] border-b-[1px] border-solid border-[#2b2b2d]'>
+      <div className='w-full bg-[#202025] flex justify-center py-[6px] border-b-[1px] border-solid border-[#2b2b2d]'>
         <div className='w-[1170px] flex flex-row justify-start items-start flex-wrap'>
           <MainButton className='px-[10px] py-[8px]' onClick={() => { }}>
             <span className='text-white text-[13px] font-[600]'>PHIM GÌ</span>
