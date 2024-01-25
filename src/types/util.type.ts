@@ -9,6 +9,16 @@ export interface SuccessResponse<Data> {
   result: Boolean
 }
 
+export interface Phim {
+  id: number;
+  tenphim: string;
+  tenkhac: string;
+  image: string;
+  tongluotxem: number;
+  phan_hoac_chatluong: string;
+  thong_tin_tap: string;
+}
+
 export interface SuccessResponsePagination<Data> extends SuccessResponse<Data> {
   page: {
     total_count: number

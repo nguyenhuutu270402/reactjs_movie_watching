@@ -1,3 +1,4 @@
+import Footer from 'src/components/Footer'
 import Sidebar from 'src/components/Sidebar'
 
 interface Props {
@@ -9,7 +10,7 @@ export default function ClientLayout({ children }: Props) {
     <div className='flex flex-col'>
       <Sidebar />
       {children}
-
+      <Footer />
     </div>
   )
 }
