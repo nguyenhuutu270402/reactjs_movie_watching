@@ -7,7 +7,7 @@ interface BearState {
   isAuthenticated: boolean
   setIsAuthenticated: (isAuthenticated: boolean) => void
 }
-export const useAppStore = create<BearState>()((set, get) => ({
+export const useAppStore = create<BearState>()((set, _get) => ({
   isLoading: false,
   setIsLoading: (isLoading) => set(() => ({ isLoading })),
   isAuthenticated: Boolean(getAccessTokenFromLS()),

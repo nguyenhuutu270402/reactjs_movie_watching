@@ -8,6 +8,8 @@ import path from './utils/path'
 const LazyLogin = React.lazy(() => import('./pages/Login'))
 const LazyClientLayout = React.lazy(() => import('./layout/ClientLayout'))
 const LazyHome = React.lazy(() => import('./pages/Home'))
+const LazyPhim = React.lazy(() => import('./pages/DetailPhim'))
+
 
 function ProtectedRoute() {
   const { isAuthenticated } = useAppStore()
@@ -41,6 +43,10 @@ export default function useRouteElement() {
         {
           path: path.home,
           element: <LazyHome />
+        },
+        {
+          path: "/phim/:phimId",
+          element: <LazyPhim />
         },
       ]
     }

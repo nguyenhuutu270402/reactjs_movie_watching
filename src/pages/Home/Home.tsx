@@ -9,7 +9,6 @@ import { Phim } from 'src/types/util.type';
 import Loading from 'src/components/Loading';
 import ItemPhimHot from 'src/components/ItemPhimHot';
 import { useNavigate } from 'react-router-dom';
-import path from 'src/utils/path';
 
 export default function Home() {
   const [listPhim, setListPhim] = useState<Phim[] | undefined>(undefined);
@@ -61,8 +60,8 @@ export default function Home() {
     return 6;
   }
 
-  const onClickItem = () => {
-    navigate(path.login)
+  const onClickItem = (data: Phim) => {
+    navigate(`/phim/${data.id}`, { state: { phimData: data } })
   }
 
   return (
@@ -111,7 +110,7 @@ export default function Home() {
             <span className='text-white text-[20px] ml-[16px] mt-[16px]'>PHIM HOT</span>
             <div className='bg-[#202025] h-[4px] w-[100%]' />
             {listTop10Phim?.map((item, index) => (
-              <ItemPhimHot data={item} onSelect={(i) => { }} className='my-[10px]' key={index} />
+              <ItemPhimHot data={item} onSelect={() => { onClickItem(item) }} className='my-[10px]' key={index} />
             ))}
 
           </div>

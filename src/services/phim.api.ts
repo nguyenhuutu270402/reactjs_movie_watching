@@ -15,6 +15,11 @@ const phimApi = {
         })
         return res.data
     },
+    getOnePhim: async (idPhim: number, idNguoiDung: number) => {
+        const res = await http.get<SuccessResponse<Phim>>(`/api/get-one-phim-by-id/${idPhim}/${idNguoiDung}`, {
+        })
+        return res.data
+    },
 }
 
 export default phimApi

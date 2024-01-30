@@ -1,7 +1,6 @@
 import axios, { type AxiosInstance } from 'axios'
 import { URL_LOGIN } from 'src/services/auth.api'
 
-import { authResponse } from '../types/auth.type'
 import { clearLS, getAccessTokenFromLS, setAccessTokenToLS } from './auth'
 
 class Http {

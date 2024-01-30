@@ -17,7 +17,52 @@ export interface Phim {
   tongluotxem: number;
   phan_hoac_chatluong: string;
   thong_tin_tap: string;
+  trangthai: number;
+  mota: string;
+  namphathanh: number;
+  sotap: number;
+  chatluong: number;
+  thoiluong: number;
+  dinhdang: number;
+  tongtheodoi: number;
+  tongdanhgia: number;
+  tongbinhluan: number;
+  sosaotrungbinh: number;
+  ngaycapnhat: string;
+  ds_tap: Tap[];
+  ds_daodien: DaoDien[];
+  ds_dienvien: DienVien[];
+  ds_theloai: TheLoai[];
+  ds_quocgia: QuocGia[];
 }
+
+export interface Tap {
+  id: number;
+  tentap: string;
+  tapso: number;
+  idnguoidung_da_xem: number | null;
+}
+
+export interface DaoDien {
+  id: number;
+  tendaodien: string;
+}
+
+export interface DienVien {
+  id: number;
+  tendienvien: string;
+}
+
+export interface TheLoai {
+  id: number;
+  tentheloai: string;
+}
+
+export interface QuocGia {
+  id: number;
+  tenquocgia: string;
+}
+
 
 export interface SuccessResponsePagination<Data> extends SuccessResponse<Data> {
   page: {

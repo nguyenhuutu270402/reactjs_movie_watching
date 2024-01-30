@@ -1,10 +1,5 @@
-import { useContext, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useAppStore } from 'src/appStore'
-import { AppContext } from 'src/contexts/app.context'
+import {  useState } from 'react'
 import { ArrowBottom, SearchICon } from 'src/icons'
-import { clearLS } from 'src/utils/auth'
-import path from 'src/utils/path'
 import MainButton from '../MainButton'
 import FarvoriteIcon from 'src/icons/FarvoriteIcon'
 import ItemFilter from '../ItemFilter'
@@ -13,8 +8,6 @@ import logo from '../../assets/logo_movie.png';
 
 
 export default function Sidebar() {
-  const { setIsAuthenticated } = useAppStore()
-  const navigate = useNavigate()
   const [showBoxFilter, setShowBoxFilter] = useState(false);
 
 

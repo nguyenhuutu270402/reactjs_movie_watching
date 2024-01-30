@@ -1,13 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useMutation } from '@tanstack/react-query'
 import classNames from 'classnames'
-import { useContext, useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from 'src/appStore'
 import Loading from 'src/components/Loading'
-import { AppContext } from 'src/contexts/app.context'
-import { setProfileToLS } from 'src/utils/auth'
 import path from 'src/utils/path'
 
 import { ArrowRightIcon, GmailIcon, PasswordIcon } from '../../icons'
@@ -18,7 +16,6 @@ type FormData = Pick<Schema, 'email' | 'matkhau'>
 const loginSchema = schema.pick(['email', 'matkhau'])
 
 export default function Login() {
-  const { setProfile } = useContext(AppContext)
   const { setIsAuthenticated } = useAppStore()
   const navigate = useNavigate()
   const [errMess, setErrMess] = useState<string>('')

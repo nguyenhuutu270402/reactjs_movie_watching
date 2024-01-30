@@ -1,4 +1,3 @@
-import { ServerStatistic } from 'src/pages/Server/types'
 import { Server, UserListServerConfig } from 'src/types/user.type'
 import {
   ErrorResponse,
@@ -6,7 +5,6 @@ import {
   SuccessResponse,
   SuccessResponsePagination,
   ToggleServerStatus,
-  getServerStatisticParams,
   settingUpdate
 } from 'src/types/util.type'
 import http from 'src/utils/http'
@@ -40,12 +38,6 @@ const serversService = {
   toggleStatus({ id, ...params }: ToggleServerStatus) {
     return http.patch<ErrorResponse>(`${URL_SERVER_START_STOP}/${id}`, params)
   },
-  getStatisticServer: async (params: getServerStatisticParams) => {
-    const res = await http.get<SuccessResponse<ServerStatistic>>(URL_SERVER_STATISTIC_SERVER, {
-      params
-    })
-    return res.data
-  }
 }
 
 export default serversService
